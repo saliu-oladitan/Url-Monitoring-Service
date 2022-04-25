@@ -7,10 +7,10 @@ namespace UrlMonitoringSystem
     {
         private readonly ILogger<Worker> _logger;
         private readonly IHttpClientFactory _httpClientFactory;
-        private List<string> Urls = new List<string> { "https://alcse.org" };
+        private List<string> Urls = new List<string> { "https://alcse.org", "https://google.com" };
 
-        //Since we will be making a Get request, we need to install a Nuge Package (microsoft.extensions.http).
-        //It gives usa an access to the IHttpClientFactory
+        //Since we will be making a Get request, we need to install a Nuget Package (microsoft.extensions.http).
+        //It gives us an access to the IHttpClientFactory
         public Worker(ILogger<Worker> logger, IHttpClientFactory httpClientFactory)
         {
             _logger = logger;
@@ -47,7 +47,7 @@ namespace UrlMonitoringSystem
             await Task.WhenAll(tasks);
         }
 
-        private async Task PollUrl(string url)
+        private async Task PollUrl(string url)  //This pulls the individual URL.
         {
             try
             {
