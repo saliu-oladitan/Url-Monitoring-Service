@@ -1,4 +1,4 @@
-UrlMonitoringSystem
+Url Monitoring System
 
 Use this to install the windows service
 
